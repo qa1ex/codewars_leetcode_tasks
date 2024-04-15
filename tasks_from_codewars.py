@@ -28,12 +28,12 @@ def multiply(word, separator, count):
 
 def test_multiply():
     assert multiply("Тест", "O", 3) == 'ТестOТестOТестOТест', f"Должны быть строка 'ТестOТестOТестOТест'"
+
+
 """
 Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in 
 descending order. Essentially, rearrange the digits to create the highest possible number.
 """
-
-
 def descending_order(num):
     str_num = str(num)
     sorted_str = ''
@@ -51,3 +51,25 @@ def descending_order(num):
 ])
 def test_descending_order(input_num, expected):
     assert descending_order(input_num) == expected, f"Ожидалось {expected}, но получено {descending_order(input_num)}"
+
+
+"""
+Create a function that always returns True/true for every item in a given list.
+However, if an element is the word 'flick', switch to always returning the opposite boolean value.
+"""
+def flick_switch(lst):
+    bool_lst = []
+    bool_flag = True  # Initial boolean value
+    for item in lst:
+        if item == 'flick':
+            bool_flag = not bool_flag  # Toggle the boolean flag
+        bool_lst.append(bool_flag)  # Append the current boolean value
+    return bool_lst
+
+@pytest.mark.parametrize("input_list, expected", [
+    (['codewars', 'flick', 'code', 'wars'], [True, False, False, False]),
+    (['flick', 'chocolate', 'adventure', 'sunshine'], [False, False, False, False]),
+    (['bicycle', 'jarmony', 'flick', 'sheep', 'flick'], [True, True, False, False, True]),
+])
+def test_flick_switch(input_list, expected):
+    assert flick_switch(input_list) == expected, f"Ожидалось: {expected}, но получено: {flick_switch(input_list)}"
