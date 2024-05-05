@@ -1,0 +1,19 @@
+# Игнорирование виртуальной среды Python
+venv/
+
+# Общие игнорируемые файлы и папки для задач Exercism
+/exercism_tasks/*/HELP.md
+/exercism_tasks/*/HINTS.md
+/exercism_tasks/*/README.md
+/exercism_tasks/*/.exercism/
+/exercism_tasks/*/.pytest_cache/
+
+# Игнорирование конфигурации IDE PyCharm
+.idea/
+
+# Игнорирование кеша pytest на уровне проекта
+.pytest_cache/
+
+# Куда скачиваются задачки с помощью "exercism download"
+/exercism_tasks/python/
+
